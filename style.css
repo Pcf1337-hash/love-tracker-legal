@@ -1,0 +1,53 @@
+:root {
+  color-scheme: dark;
+  --bg: #090a16;
+  --surface: #131527;
+  --surface-soft: #1a1d33;
+  --text: #f7f5ff;
+  --muted: #b4b5c9;
+  --accent: #ff6b8a;
+  --accent-soft: #bd78ff;
+  --border: rgba(255, 255, 255, .11);
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 15% 0%, rgba(255,107,138,.16), transparent 32rem), var(--bg);
+  color: var(--text);
+}
+main { width: min(780px, calc(100% - 2rem)); margin: 0 auto; padding: 3rem 0 4rem; }
+.hero { padding: 2rem 0 1.5rem; }
+.eyebrow { color: var(--accent); font-weight: 800; letter-spacing: .16em; font-size: .75rem; }
+h1 { margin: .35rem 0 .6rem; font-size: clamp(2rem, 7vw, 3.4rem); line-height: 1.08; letter-spacing: -.035em; }
+h2 { margin: 0 0 .65rem; font-size: 1.18rem; color: #ff91aa; }
+h3 { font-size: 1rem; margin: 1rem 0 .35rem; }
+p, li { color: var(--muted); }
+strong { color: var(--text); }
+a { color: #ff91aa; }
+code { color: #e5c8ff; }
+nav.top { margin-bottom: 1.5rem; }
+nav.top a { text-decoration: none; font-weight: 700; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.card, section {
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+  border-radius: 18px;
+}
+.card { display: flex; flex-direction: column; gap: .4rem; padding: 1.25rem; text-decoration: none; min-height: 130px; }
+.card:hover, .card:focus-visible { border-color: rgba(255,107,138,.58); transform: translateY(-1px); }
+.card strong { font-size: 1.08rem; }
+.card span { color: var(--muted); }
+section { padding: 1.3rem 1.4rem; margin: 0 0 1rem; }
+section p:last-child, section ul:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 1.25rem; }
+.notice { border-color: rgba(255,107,138,.38); background: rgba(255,107,138,.08); }
+.button {
+  display: inline-block; margin-top: .5rem; padding: .8rem 1rem; border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft)); color: #fff;
+  text-decoration: none; font-weight: 800;
+}
+footer { margin-top: 2rem; color: #85879e; font-size: .9rem; }
+@media (max-width: 620px) { .cards { grid-template-columns: 1fr; } main { padding-top: 1.5rem; } }
+@media (prefers-reduced-motion: no-preference) { .card { transition: transform .18s ease, border-color .18s ease; } }
